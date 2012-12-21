@@ -1,0 +1,33 @@
+{
+  "name"              : "phantomjs-please",
+  "main"              : "PhantomJsPlease.js",
+  "description"       : "Bridge from Node to Phantom",
+  "version"           : "0.0.1pre",
+  "keywords"          : [ "testing" ],
+  "homepage"          : "https://github.com/sethmcl/phantomjs-please",
+  "bugs"              : {
+    "url": "https://github.com/sethmcl/phantomjs-please/issues"
+  },
+  "engines"           : {
+    "node"            : ">=0.8.0"
+  },
+  "licenses"          : [{
+    "type"            : "Apache 2.0"
+  }],
+  "dependencies"      : {
+    "socket.io"         : "0.8.7",
+    "portscanner"       : "0.1.3",
+    "promised-io"       : "0.3.3"
+  },
+  "devDependencies": {
+    "chai"              : "1.0.4",
+    "mocha"             : "1.7.4",
+    "sinon-chai"        : "2.1.2",
+    "sinon"             : "1.3.4",
+    "socket.io-client"  : "0.9.11"
+  },
+  "preferGlobal": true,
+  "scripts": {
+    "test": "mocha test/specs/ --recursive"
+  }
+}
