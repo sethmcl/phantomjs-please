@@ -2,7 +2,8 @@ var should     = require( '../lib/sinon-chai' ).chai.should(),
     sinon      = require( 'sinon' ),
     Phantom    = require( '../../lib/PhantomJsPlease' ),
     ioclient   = require( 'socket.io-client' ),
-    shttp      = require( '../../lib/shttp/shttp' );
+    shttp      = require( '../../lib/shttp/shttp' ),
+    exec       = require( 'child_process' ).exec;
 
 describe( 'PhantomJS -- Please!', function(){
   var phantom;
@@ -54,6 +55,14 @@ describe( 'PhantomJS -- Please!', function(){
     socket.on( 'command', function( event ){
       done();
     });
+  });
+
+  it( 'should be killed', function( done ){
+    phantom.phantomProcess.on( 'exit', function(){
+      done();
+    });
+
+    phantom.killPhantomProcess();
   });
 
   // describe( 'Browsers', function() {
