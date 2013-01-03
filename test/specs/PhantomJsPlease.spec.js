@@ -65,6 +65,19 @@ describe( 'PhantomJS -- Please!', function(){
     phantom.killPhantomProcess();
   });
 
+  it( 'should support custom path to phantomjs binary', function( done ){
+    var phantom = new Phantom();
+
+    phantom.on( 'phantom-stdout', function( msg ){
+      if( msg.indexOf( 'PhantomClient.js' ) !== -1 ){
+        done();
+      }
+    });
+
+
+    phantom.initialize( { phantomBinaryPath: 'echo' } );
+  });
+
   // describe( 'Browsers', function() {
     // it( 'should create a browser', function(){
       // var browser = phantom.createBrowser();

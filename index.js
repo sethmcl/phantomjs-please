@@ -6,11 +6,14 @@ var PhantomJsPlease = require( './lib/PhantomJsPlease' );
 // 'Static' instance
 var instance = new PhantomJsPlease();
 
-module.exports = function() {
-
+// Setup instance
+module.exports.setup = function( config ){
   if( !instance.initialized ){
-    instance.initialize();
+    instance.initialize( config );
   }
+};
 
+// Create a new browser
+module.exports.createBrowser = function( phantomBinaryPath ) {
   return instance.createBrowser();
 };
