@@ -14,6 +14,7 @@ module.exports.setup = function( config ){
 };
 
 // Create a new browser
-module.exports.createBrowser = function( phantomBinaryPath ) {
+module.exports.createBrowser = function() {
+  this.setup();
   return instance.createBrowser();
 };
