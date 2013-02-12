@@ -2,7 +2,7 @@
   "name"              : "phantomjs-please",
   "main"              : "PhantomJsPlease.js",
   "description"       : "Bridge from Node to Phantom",
-  "version"           : "0.0.1pre",
+  "version"           : "0.0.21",
   "keywords"          : [ "testing" ],
   "homepage"          : "https://github.com/sethmcl/phantomjs-please",
   "bugs"              : {
